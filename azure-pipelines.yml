@@ -38,13 +38,13 @@ steps:
   continueOnError: false
 
 - task: CmdLine@2
-  displayName : 'Build Docker Image' 
+  displayName: 'Build Docker Image'
   inputs:
-    script: |
-      echo Build Docker Image
-      docker build -t flaskapp .
+      script: |
+        echo "Build Docker Image"
+        docker build -t flaskapp . 
       workingDirectory: '$(Build.ArtifactStagingDirectory)'
-      continueOnError : false
+  continueOnError: false
 - task: CmdLine@2
   displayName: 'Test Container'
   inputs:
