@@ -1,4 +1,4 @@
-#test test 
+# test test
 import os
 
 from flask import (Flask, redirect, render_template, request,
@@ -25,7 +25,7 @@ def hello():
        print('Request for hello page received with name=%s' % name)
        return render_template('hello.html', name = name)
    else:
-       print('Request for hello page received with no name or blank name -- redirecting')
+       print('Request for hello page -- redirecting')
        return redirect(url_for('index'))
 
 
