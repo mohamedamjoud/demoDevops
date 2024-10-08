@@ -28,9 +28,9 @@ steps:
   inputs:
     script: |
       echo Test Code Quality
-      python -m pip install yapf flake8
-      python -m yapf -i app.py
-      python -m flake8 app.py
+      python3 -m pip install yapf flake8
+      python3 -m yapf -i app.py
+      python3 -m flake8 app.py
       workingDirectory: '$(Build.ArtifactStagingDirectory)'
       continueOnError : false
 
