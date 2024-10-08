@@ -27,14 +27,16 @@ steps:
   displayName: 'Test code quality'
   inputs:
     script: |
-      echo Test code qualit
+      echo "Test code quality"
       python3 -m venv myenv
-      source myenv/bin/activate
-      pip3 install yapf flake8
-      python3 -m yapf -i app.py
-      python3 -m flake8 app.py
+      ./myenv/bin/python -m pip install --upgrade pip
+      ./myenv/bin/pip install yapf flake8
+      ./myenv/bin/python -m yapf -i app.py
+      ./myenv/bin/python -m flake8 app.py
+
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
   continueOnError: false
+
 - task: CmdLine@2
   displayName : 'Build Docker Image' 
   inputs:
