@@ -29,7 +29,7 @@ steps:
     script: |
       echo Test code qualit
       source myenv/bin/activate
-      pip3 install yapf flake 8
+      pip3 install yapf flake8
       python3 yapf -i app.py
       python3 flake8 app.py
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
