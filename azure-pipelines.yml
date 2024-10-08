@@ -31,8 +31,8 @@ steps:
       python3 -m venv myenv
       source myenv/bin/activate
       pip3 install yapf flake8
-      python3 yapf -i app.py
-      python3 flake8 app.py
+      python3 -m yapf -i app.py
+      python3 -m flake8 app.py
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
   continueOnError: false
 - task: CmdLine@2
