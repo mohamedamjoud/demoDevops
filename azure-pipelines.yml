@@ -42,7 +42,7 @@ steps:
   inputs:
       script: |
         echo "Build Docker Image"
-        docker build -t flaskapp . 
+        sudo docker build -t flaskapp . 
       workingDirectory: '$(Build.ArtifactStagingDirectory)'
   continueOnError: false
 - task: CmdLine@2
