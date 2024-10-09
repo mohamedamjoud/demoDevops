@@ -59,5 +59,6 @@ steps:
   displayName : 'PaaS deployment'
   inputs:
     script: |
-      echo my app service
+      echo my app service 
+      pwd
       az webapp deploy --name $APP_SERVICE_NAME --resource-group $RESOURCE_GROUP_NAME --src-path '/home/azureuser/myagent/_work/1/a'
