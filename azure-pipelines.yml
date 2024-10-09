@@ -73,4 +73,9 @@ steps:
     publishLocation: 'Container'
   continueOnError : false
 
- 
+- task: CmdLine@2
+  displayName : 'PaaS deployment'
+  inputs:
+    script: |
+      echo my app service
+      az webapp deploy –name $APP_SERVICE_NAME –resource-group $RESOURCE_GROUP_NAME –src-path $(Build.ArtifactStagingDirectory)/*
