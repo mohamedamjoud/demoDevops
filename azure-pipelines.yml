@@ -55,24 +55,6 @@ steps:
     workingDirectory: '$(Build.ArtifactStagingDirectory)'
   continueOnError : false
 
-
-- task: CmdLine@2
-  displayName: 'Save Docker Image'
-  inputs:
-    script: |
-      echo Save Docker Image
-      sudo docker save flaskapp > flaskapp.tar
-    workingDirectory: '$(Build.BinariesDirectory)'
-  continueOnError : false
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
-  inputs:
-    PathtoPublish: '$(Build.BinariesDirectory)/flaskapp.tar'
-    ArtifactName: 'flaskapp'
-    publishLocation: 'Container'
-  continueOnError : false
-
 - task: CmdLine@2
   displayName : 'PaaS deployment'
   inputs:
